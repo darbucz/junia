@@ -1,19 +1,19 @@
 # LabrApp 🐶
 
-Pełna aplikacja dla miłośników labradorów z React + Tailwind
+Pełna aplikacja dla miłośników labradorów z poprawką `vite.config.js` (base: "./")
 
-## Jak uruchomić
+## Uruchomienie
 
 1. Zainstaluj zależności:
 ```
 npm install
 ```
 
-2. Uruchom projekt lokalnie:
+2. Uruchom lokalnie:
 ```
 npm run dev
 ```
 
-3. Otwórz w przeglądarce `http://localhost:5173`
-
-Gotowe do wrzucenia na GitHub i publikacji na Netlify 🚀
+3. Aby wdrożyć na Netlify:
+- Build command: `npm run build`
+- Publish directory: `dist`
