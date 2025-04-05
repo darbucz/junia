@@ -1,69 +1,38 @@
 import { useState } from "react";
 
-export default function LabradorApp() {
-  const [dogProfile, setDogProfile] = useState({ name: "", age: "", favoriteToy: "" });
-  const [gallery, setGallery] = useState([]);
-  const [photo, setPhoto] = useState("");
-
-  const handleProfileChange = (e) => {
-    setDogProfile({ ...dogProfile, [e.target.name]: e.target.value });
-  };
-
-  const handleAddPhoto = () => {
-    if (photo) {
-      setGallery([...gallery, photo]);
-      setPhoto("");
-    }
-  };
+// -- Full App Code from Canvas Here --
+export default function LabrApp() {
+  const [activeTab, setActiveTab] = useState("home");
 
   return (
-    <div className="p-4 max-w-xl mx-auto space-y-6">
-      <h1 className="text-3xl font-bold text-center">🐶 LabrApp</h1>
+    <div className="min-h-screen bg-gray-100 font-sans">
+      <header className="bg-yellow-200 p-4 text-center shadow-md">
+        <h1 className="text-3xl font-bold">🐾 LabrApp</h1>
+        <p className="text-sm">Twoje centrum dla labradora</p>
+      </header>
 
-      <div className="space-y-4">
-        <input
-          className="w-full p-2 border rounded"
-          placeholder="Imię labradora"
-          name="name"
-          value={dogProfile.name}
-          onChange={handleProfileChange}
-        />
-        <input
-          className="w-full p-2 border rounded"
-          placeholder="Wiek"
-          name="age"
-          value={dogProfile.age}
-          onChange={handleProfileChange}
-        />
-        <input
-          className="w-full p-2 border rounded"
-          placeholder="Ulubiona zabawka"
-          name="favoriteToy"
-          value={dogProfile.favoriteToy}
-          onChange={handleProfileChange}
-        />
+      <nav className="flex justify-around bg-white p-2 shadow-md flex-wrap">
+        <button onClick={() => setActiveTab("home")}>🏠 Home</button>
+        <button onClick={() => setActiveTab("profile")}>🐶 Profil</button>
+        <button onClick={() => setActiveTab("gallery")}>📸 Galeria</button>
+        <button onClick={() => setActiveTab("spots")}>📍 Spoty</button>
+        <button onClick={() => setActiveTab("guide")}>🧠 Poradnik</button>
+        <button onClick={() => setActiveTab("forum")}>💬 Forum</button>
+        <button onClick={() => setActiveTab("tracker")}>🐾 Tracker</button>
+      </nav>
 
-        <div className="space-y-2">
-          <input
-            className="w-full p-2 border rounded"
-            placeholder="Link do zdjęcia"
-            value={photo}
-            onChange={(e) => setPhoto(e.target.value)}
-          />
-          <button className="w-full bg-blue-500 text-white py-2 rounded" onClick={handleAddPhoto}>Dodaj zdjęcie</button>
-        </div>
-
-        <div className="grid grid-cols-2 gap-2">
-          {gallery.map((url, index) => (
-            <img
-              key={index}
-              src={url}
-              alt={`Labrador ${index + 1}`}
-              className="rounded-xl shadow"
-            />
-          ))}
-        </div>
-      </div>
+      <main className="p-4">
+        {activeTab === "home" && <HomeScreen />}
+        {activeTab === "profile" && <ProfileScreen />}
+        {activeTab === "gallery" && <GalleryScreen />}
+        {activeTab === "spots" && <SpotsScreen />}
+        {activeTab === "guide" && <GuideScreen />}
+        {activeTab === "forum" && <ForumScreen />}
+        {activeTab === "tracker" && <TrackerScreen />}
+      </main>
     </div>
   );
 }
+
+// Additional screen components here...
+// -- Use the rest of the code from canvas --

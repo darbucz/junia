@@ -1,27 +1,19 @@
 # LabrApp 🐶
 
-Testowa aplikacja webowa dla miłośników labradorów.
+Pełna aplikacja dla miłośników labradorów z React + Tailwind
 
-## 🔧 Jak uruchomić
+## Jak uruchomić
 
 1. Zainstaluj zależności:
-
 ```
 npm install
 ```
 
-2. Uruchom lokalny serwer:
-
+2. Uruchom projekt lokalnie:
 ```
 npm run dev
 ```
 
-3. Otwórz przeglądarkę i wejdź na `http://localhost:5173`
+3. Otwórz w przeglądarce `http://localhost:5173`
 
-## 💡 Funkcje
-
-- Profil labradora
-- Galeria zdjęć
-- Mini poradnik
-
-Made with 💙 using React + Tailwind + Vite.
+Gotowe do wrzucenia na GitHub i publikacji na Netlify 🚀
